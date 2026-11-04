@@ -56,19 +56,6 @@ export const config = {
             technologies: ["Python", "PostgreSQL", "Neo4j", "Qdrant", "AWS", "LLM APIs"]
         },
         {
-            position: "Software Engineer Intern",
-            company: "Better Technology Labs",
-            period: "Jun 2025 - Jul 2025",
-            location: "Pune, India",
-            description:
-                "Developed a Django employee management system with authentication, role-based access and reporting, and sped up Python batch jobs with multiprocessing.",
-            responsibilities: [
-                "Built auth, role-based access control and reporting for a Django employee management system",
-                "Used multiprocessing to speed up MySQL-backed Python batch jobs"
-            ],
-            technologies: ["Python", "Django", "MySQL"]
-        },
-        {
             position: "B.Tech, Computer Engineering",
             company: "Vishwakarma University, Pune",
             period: "2023 - 2027",
