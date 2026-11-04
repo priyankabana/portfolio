@@ -42,7 +42,12 @@ const loadImage = (src: string) =>
 const CursorHero = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const sectionRef = useRef<HTMLDivElement>(null);
-  const { setLoading } = useLoading();
+  const { setLoading, isLoading } = useLoading();
+  // Keep the front-facing portrait still for 2 s after the loading screen closes.
+  const holdUntil = useRef<number>(Number.POSITIVE_INFINITY);
+  useEffect(() => {
+    if (!isLoading) holdUntil.current = performance.now() + 2000;
+  }, [isLoading]);
   const [hasFrames, setHasFrames] = useState(false);
   const { hero, developer } = config;
 
@@ -147,14 +152,15 @@ const CursorHero = () => {
       const cue = section.querySelector<HTMLElement>(".hero-scroll");
       if (cue) cue.style.opacity = scrolled ? "0" : "1";
       // once the visitor starts scrolling, settle back on the front-facing portrait
-      const inDeadzone = scrolled || !pointer.active || dist < radius * DEADZONE;
+      const holding = performance.now() < holdUntil.current;
+      const inDeadzone = holding || scrolled || !pointer.active || dist < radius * DEADZONE;
       const target = Math.atan2(dy, dx);
       smoothed = lerpAngle(smoothed, target, LERP);
 
-      if (ready && center) {
+      if (center) {
         let key: string;
         let img: HTMLImageElement;
-        if (inDeadzone) {
+        if (inDeadzone || !ready) {
           key = "c";
           img = center;
         } else {
@@ -191,29 +197,44 @@ const CursorHero = () => {
     document.addEventListener("pointerleave", onLeave);
     raf = requestAnimationFrame(tick);
 
+    // The loader must reach 100% within ~2 s even if frames are still downloading.
+    let progressDone = false;
+    const finishProgress = () => {
+      if (progressDone || disposed) return;
+      progressDone = true;
+      progress.loaded();
+    };
+    const progressCap = window.setTimeout(finishProgress, 1200);
+
     const n = hero.frameCount;
     const pad = (i: number) => String(i).padStart(2, "0");
-    Promise.all([
-      loadImage(`${hero.framesPath}/center.webp`),
-      ...Array.from({ length: n }, (_, i) => loadImage(`${hero.framesPath}/frame_${pad(i)}.webp`)),
-    ])
-      .then(([c, ...f]) => {
+    // The front-facing portrait first, so it shows right away; the 64 tracking frames follow.
+    loadImage(`${hero.framesPath}/center.webp`)
+      .then((c) => {
         if (disposed) return;
         center = c;
+        lastDrawn = "";
+        setHasFrames(true);
+        return Promise.all(
+          Array.from({ length: n }, (_, i) => loadImage(`${hero.framesPath}/frame_${pad(i)}.webp`))
+        );
+      })
+      .then((f) => {
+        if (disposed || !f) return;
         frames = f;
         ready = true;
         lastDrawn = "";
-        setHasFrames(true);
       })
       .catch(() => {
         /* frames not added yet: keep the placeholder */
       })
       .finally(() => {
-        if (!disposed) progress.loaded();
+        finishProgress();
       });
 
     return () => {
       disposed = true;
+      window.clearTimeout(progressCap);
       cancelAnimationFrame(raf);
       window.removeEventListener("resize", resize);
       window.removeEventListener("pointermove", onMove);
