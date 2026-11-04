@@ -146,3 +146,40 @@
     display: none;
   }
 }
+
+/* Scroll-down cue */
+.hero-scroll {
+  position: absolute;
+  left: 50%;
+  bottom: clamp(18px, 4vh, 36px);
+  transform: translateX(-50%);
+  z-index: 6;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  color: #f4a6c0;
+  text-decoration: none;
+  transition: opacity 0.4s ease;
+}
+.hero-scroll-label {
+  font-size: 11px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: rgba(255, 228, 236, 0.7);
+}
+.hero-scroll svg {
+  animation: heroScrollBounce 1.6s ease-in-out infinite;
+  filter: drop-shadow(0 0 6px rgba(244, 166, 192, 0.6));
+}
+@keyframes heroScrollBounce {
+  0%, 100% { transform: translateY(0); opacity: 0.6; }
+  50% { transform: translateY(8px); opacity: 1; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero-scroll svg { animation: none; }
+}
+@media only screen and (max-width: 768px) {
+  .hero-scroll { bottom: 10px; }
+  .hero-scroll-label { display: none; }
+}
