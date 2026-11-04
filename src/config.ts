@@ -9,7 +9,7 @@ export const config = {
     },
     hero: {
         greeting: "Hi, I'm",
-        bio: "I build reliable data pipelines, LLM quality systems and full-stack apps, with a soft spot for clean data and measurable results.",
+        bio: "I build scalable data pipelines on AWS, LLM quality systems and full-stack apps, and I own them from design to production.",
         // Exact background colour of character.mp4 (printed by scripts/extract_frames.py).
         // The canvas and hero section use it so the character blends in seamlessly.
         backgroundColor: "#2c051c",
@@ -26,12 +26,12 @@ export const config = {
         title: "About Me",
         greeting: "hii, im priii",
         paragraphs: [
-            "I’m a computer engineering student who enjoys building polished, intuitive digital experiences and systems that actually work in the real world. I spend a lot of time building full-stack projects, automations, and data-driven systems, and figuring out how to turn messy ideas or raw inputs into something reliable and usable.",
-            "Beyond just coding features, I’m drawn to how things work behind the scenes. Designing pipelines, working with APIs, handling data at scale, and applying core CS fundamentals to build for speed and stability is what keeps me curious. I enjoy solving problems where there’s no straight answer and the solution needs both logic and creativity.",
+            "I’m a final-year computer engineering student who builds systems that actually work in the real world, and I like owning them end to end: design, code, deployment, and fixing them when production misbehaves. Over the past year I’ve built data pipelines, LLM-powered tools and full-stack apps on AWS, turning messy ideas and raw inputs into something reliable that people can depend on.",
+            "Beyond shipping features, I’m drawn to how things work behind the scenes. Designing fault-tolerant pipelines, working with APIs and data at scale, and using core CS fundamentals like data structures, algorithms and object-oriented design to build for speed, stability and cost is what keeps me curious. I enjoy problems with no straight answer, where I have to dive deep to the root cause and the fix needs both logic and creativity.",
             "When I’m not coding, I’m usually exploring mountains, going on treks, or getting lost in new places. I dance Bharatanatyam, write sometimes whether it’s poetry or random thoughts about life, and I really enjoy observing the world a little too closely.",
-            "I love learning, building, and connecting with people who care about thoughtful tech and meaningful work."
+            "I love learning, building, and working with people who care about thoughtful tech, the people who use it, and meaningful work."
         ],
-        description: "I’m a computer engineering student who enjoys building polished, intuitive digital experiences and systems that actually work in the real world. I spend a lot of time building full-stack projects, automations, and data-driven systems, and figuring out how to turn messy ideas or raw inputs into something reliable and usable. Beyond just coding features, I’m drawn to how things work behind the scenes. Designing pipelines, working with APIs, handling data at scale, and applying core CS fundamentals to build for speed and stability is what keeps me curious. I enjoy solving problems where there’s no straight answer and the solution needs both logic and creativity. When I’m not coding, I’m usually exploring mountains, going on treks, or getting lost in new places. I dance Bharatanatyam, write sometimes whether it’s poetry or random thoughts about life, and I really enjoy observing the world a little too closely. I love learning, building, and connecting with people who care about thoughtful tech and meaningful work."
+        description: "I’m a final-year computer engineering student who builds systems that actually work in the real world, and I like owning them end to end: design, code, deployment, and fixing them when production misbehaves. Over the past year I’ve built data pipelines, LLM-powered tools and full-stack apps on AWS, turning messy ideas and raw inputs into something reliable that people can depend on. Beyond shipping features, I’m drawn to how things work behind the scenes. Designing fault-tolerant pipelines, working with APIs and data at scale, and using core CS fundamentals like data structures, algorithms and object-oriented design to build for speed, stability and cost is what keeps me curious. I enjoy problems with no straight answer, where I have to dive deep to the root cause and the fix needs both logic and creativity. When I’m not coding, I’m usually exploring mountains, going on treks, or getting lost in new places. I dance Bharatanatyam, write sometimes whether it’s poetry or random thoughts about life, and I really enjoy observing the world a little too closely. I love learning, building, and working with people who care about thoughtful tech, the people who use it, and meaningful work."
     },
     education: {
         degree: "B.Tech, Computer Engineering",
