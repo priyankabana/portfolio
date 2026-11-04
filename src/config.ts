@@ -172,7 +172,7 @@ export const config = {
             image: "/images/placement.svg",
             description:
                 "A campus placement management portal with role-based access, eligibility and duplicate-application rules in a transactional service layer, and JUnit-tested business logic.",
-            link: "https://github.com/priyankabana/placement-portal"
+            link: "https://vu-placement-portal.onrender.com"
         }
     ],
     contact: {
