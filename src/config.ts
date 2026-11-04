@@ -116,6 +116,26 @@ export const config = {
         },
         {
             id: 5,
+            title: "Serverless Bond Pipeline",
+            category: "Work · BuySellTips",
+            technologies: "Python, AWS Lambda, Docker, Selenium, PostgreSQL, boto3",
+            image: "/images/bond-pipeline.svg",
+            description:
+                "An orchestrator pulls pending bond CUSIPs from PostgreSQL, splits them into batches of 10 and fans them out as asynchronous AWS Lambda invocations running containerised headless Chrome to collect daily FINRA price and yield data. Idempotent upserts and automatic session refresh with bounded retries make every run safe to repeat.",
+            link: ""
+        },
+        {
+            id: 6,
+            title: "IPO Automation on EC2",
+            category: "Work · BuySellTips",
+            technologies: "Python, AWS EC2, Bash, cron, PostgreSQL, OpenAI Agents SDK",
+            image: "/images/ipo-ec2.svg",
+            description:
+                "Daily NASDAQ IPO ingestion: cron starts an EC2 instance, runs the loader with idempotent merges and LLM enrichment for new listings only, then stops the instance and emails a run report (~4 min per run; 0 failures in 7 of 8 logged runs). A flock-based lease protocol lets 3 scheduled jobs share one instance safely.",
+            link: ""
+        },
+        {
+            id: 7,
             title: "Touchstone",
             category: "Data Reliability / AI Agents",
             technologies: "Python, FastAPI, SQLite, OpenAI API, pytest",
@@ -125,7 +145,7 @@ export const config = {
             link: "https://github.com/priyankabana/touchstone"
         },
         {
-            id: 6,
+            id: 8,
             title: "GeoTrade",
             category: "Final-Year Project",
             technologies: "Python, FastAPI, PostgreSQL/PostGIS, React, Docker",
@@ -135,7 +155,7 @@ export const config = {
             link: ""
         },
         {
-            id: 7,
+            id: 9,
             title: "HeyVanilla",
             category: "Full-Stack Web App",
             technologies: "Next.js 14, TypeScript, Supabase, PostgreSQL, Docker",
@@ -145,7 +165,7 @@ export const config = {
             link: ""
         },
         {
-            id: 8,
+            id: 10,
             title: "Placement Portal",
             category: "Java / Spring Boot",
             technologies: "Java 17, Spring Boot, JPA, MySQL, JUnit",

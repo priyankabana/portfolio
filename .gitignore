@@ -34,3 +34,4 @@ public/frames/_preview.jpg
 public/character.mp4
 public/frames/_preview.jpg
 *.tsbuildinfo
+.vercel

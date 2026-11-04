@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#3b1730"/><stop offset="1" stop-color="#140a10"/></linearGradient>
+    <radialGradient id="glow" cx="0.78" cy="0.25" r="0.6"><stop offset="0" stop-color="#ffd3e1" stop-opacity="0.45"/><stop offset="1" stop-color="#ffd3e1" stop-opacity="0"/></radialGradient>
+  </defs>
+  <rect width="800" height="500" fill="url(#bg)"/><rect width="800" height="500" fill="url(#glow)"/>
+  <g opacity="0.9"><g fill="none" stroke="#ffd3e1" stroke-width="2" stroke-opacity="0.55"><rect x="470" y="150" width="70" height="60" rx="10"/><path d="M540 180 L620 95"/><rect x="620" y="80" width="90" height="30" rx="8" fill="#ffd3e1" fill-opacity="0.15"/><path d="M540 180 L620 137"/><rect x="620" y="122" width="90" height="30" rx="8" fill="#ffd3e1" fill-opacity="0.22999999999999998"/><path d="M540 180 L620 179"/><rect x="620" y="164" width="90" height="30" rx="8" fill="#ffd3e1" fill-opacity="0.31"/><path d="M540 180 L620 221"/><rect x="620" y="206" width="90" height="30" rx="8" fill="#ffd3e1" fill-opacity="0.39"/><path d="M540 180 L620 263"/><rect x="620" y="248" width="90" height="30" rx="8" fill="#ffd3e1" fill-opacity="0.47"/></g><text x="485" y="188" font-family="Helvetica" font-size="20" fill="#ffd3e1">λ</text></g>
+  <text x="56" y="390" font-family="Georgia, 'Times New Roman', serif" font-size="60" font-style="italic" fill="#fff4f7">Bond Pipeline</text>
+  <text x="58" y="436" font-family="Helvetica, Arial, sans-serif" font-size="22" letter-spacing="3" fill="#e7b7a3">SERVERLESS ON AWS LAMBDA</text>
+</svg>
