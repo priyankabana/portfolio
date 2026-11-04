@@ -142,7 +142,8 @@ export const config = {
             image: "/images/touchstone.svg",
             description:
                 "A self-verifying pipeline for SEC EDGAR 13F data that proves, auto-corrects or holds every row. It caught 5 of 5 planted faults, including a 1,302x currency-unit error, that a naive pipeline marked healthy. LLM-written checks go live only after sandbox replay and human approval.",
-            link: "https://touchstone-tech.vercel.app"
+            link: "https://touchstone-tech.vercel.app",
+            repo: "https://github.com/priyankabana/touchstone"
         },
         {
             id: 8,
@@ -152,7 +153,8 @@ export const config = {
             image: "/images/geotrade.svg",
             description:
                 "A supply-chain exposure map built from public filings. Consolidated 29,442 raw listings from 6 markets into 23,020 geocoded companies, served by a 25-table PostGIS schema and a FastAPI service measured at 2-4 ms.",
-            link: "https://geotrade-atlas.vercel.app"
+            link: "https://geotrade-atlas.vercel.app",
+            repo: "https://github.com/priyankabana/geotrade"
         },
         {
             id: 9,
@@ -162,7 +164,8 @@ export const config = {
             image: "/images/heyvanilla.svg",
             description:
                 "A personal productivity platform with 15+ modules (habits, tasks, finance, goals, study) on a typed realtime data layer, with row-level security on all 20 tables and a hardened Docker image.",
-            link: "https://heyvanilla.vercel.app"
+            link: "https://heyvanilla.vercel.app",
+            repo: "https://github.com/priyankabana/heyvanilla"
         },
         {
             id: 10,
@@ -172,7 +175,8 @@ export const config = {
             image: "/images/placement.svg",
             description:
                 "A campus placement management portal with role-based access, eligibility and duplicate-application rules in a transactional service layer, and JUnit-tested business logic.",
-            link: "https://vu-placement-portal.onrender.com"
+            link: "https://vu-placement-portal.onrender.com",
+            repo: "https://github.com/priyankabana/placement-portal"
         }
     ],
     contact: {

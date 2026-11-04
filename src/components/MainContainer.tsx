@@ -7,6 +7,7 @@ import Navbar from "./Navbar";
 import SocialIcons from "./SocialIcons";
 import WhatIDo from "./WhatIDo";
 import Work from "./Work";
+import LiveProjects from "./LiveProjects";
 import TechStackNew from "./TechStackNew";
 import CallToAction from "./CallToAction";
 import setSplitText from "./utils/splitText";
@@ -29,6 +30,7 @@ const MainContainer = () => {
         <WhatIDo />
         <Career />
         <Work />
+        <LiveProjects />
         <TechStackNew />
         <CallToAction />
         <Contact />

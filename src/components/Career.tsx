@@ -13,6 +13,11 @@ const getDisplayYear = (period: string) => {
   return year ? year[0] : start;
 };
 
+const formatPeriod = (period: string) => {
+  if (period.includes("Present")) return `Since ${period.split(" - ")[0].replace("Jul", "July").replace("Jun", "June")}`;
+  return period.replace(" - ", " – ");
+};
+
 const Career = () => {
   useEffect(() => {
     // Grow the timeline line and fade in each entry as the section scrolls into view
@@ -57,6 +62,7 @@ const Career = () => {
                 <div className="career-role">
                   <h4>{exp.position}</h4>
                   <h5>{exp.company}</h5>
+                  <p className="career-period">{formatPeriod(exp.period)}</p>
                 </div>
                 <h3>{getDisplayYear(exp.period)}</h3>
               </div>
