@@ -25,7 +25,6 @@ export const config = {
     about: {
         title: "About Me",
         greeting: "hii, im priii",
-        tagline: "I exist on the internet and I build cool stuff.",
         paragraphs: [
             "I’m a computer engineering student who enjoys building polished, intuitive digital experiences and systems that actually work in the real world. I spend a lot of time building full-stack projects, automations, and data-driven systems, and figuring out how to turn messy ideas or raw inputs into something reliable and usable.",
             "Beyond just coding features, I’m drawn to how things work behind the scenes. Designing pipelines, working with APIs, handling data at scale, and applying core CS fundamentals to build for speed and stability is what keeps me curious. I enjoy solving problems where there’s no straight answer and the solution needs both logic and creativity.",
