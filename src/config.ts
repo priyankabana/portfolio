@@ -142,7 +142,7 @@ export const config = {
             image: "/images/touchstone.svg",
             description:
                 "A self-verifying pipeline for SEC EDGAR 13F data that proves, auto-corrects or holds every row. It caught 5 of 5 planted faults, including a 1,302x currency-unit error, that a naive pipeline marked healthy. LLM-written checks go live only after sandbox replay and human approval.",
-            link: "https://github.com/priyankabana/touchstone"
+            link: "https://touchstone-tech.vercel.app"
         },
         {
             id: 8,
@@ -162,7 +162,7 @@ export const config = {
             image: "/images/heyvanilla.svg",
             description:
                 "A personal productivity platform with 15+ modules (habits, tasks, finance, goals, study) on a typed realtime data layer, with row-level security on all 20 tables and a hardened Docker image.",
-            link: "https://github.com/priyankabana/heyvanilla"
+            link: "https://heyvanilla.vercel.app"
         },
         {
             id: 10,
