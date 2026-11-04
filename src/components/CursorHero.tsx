@@ -54,8 +54,6 @@ const CursorHero = () => {
 
     let frames: HTMLImageElement[] = [];
     let center: HTMLImageElement | null = null;
-    let og: HTMLImageElement | null = null; // real photo, shown once the visitor scrolls
-    let ogMix = 0; // 0 = animated portrait, 1 = real photo
     let ready = false;
     let raf = 0;
     let disposed = false;
@@ -85,7 +83,7 @@ const CursorHero = () => {
     };
 
     // object-fit: cover, anchored so the face stays in frame on wide screens
-    const drawCover = (img: HTMLImageElement, overlay?: HTMLImageElement | null, alpha = 0) => {
+    const drawCover = (img: HTMLImageElement) => {
       const scale = Math.max(w / img.naturalWidth, h / img.naturalHeight);
       const dw = img.naturalWidth * scale;
       const dh = img.naturalHeight * scale;
@@ -96,11 +94,6 @@ const CursorHero = () => {
       const dx = w * FACE.x - dw / 2;
       const dy = (h - dh) / 2 + (w > 900 ? h * SUBJECT_Y_SHIFT : 0);
       ctx.drawImage(img, dx, dy, dw, dh);
-      if (overlay && alpha > 0) {
-        ctx.globalAlpha = alpha;
-        ctx.drawImage(overlay, dx, dy, dw, dh);
-        ctx.globalAlpha = 1;
-      }
     };
 
     // Shown until real frames are added: a soft orb with a monogram that
@@ -150,7 +143,11 @@ const CursorHero = () => {
       const dy = pointer.y - fy;
       const dist = Math.hypot(dx, dy);
       const radius = Math.hypot(w, h) / 2;
-      const inDeadzone = !pointer.active || dist < radius * DEADZONE;
+      const scrolled = window.scrollY > 8;
+      const cue = section.querySelector<HTMLElement>(".hero-scroll");
+      if (cue) cue.style.opacity = scrolled ? "0" : "1";
+      // once the visitor starts scrolling, settle back on the front-facing portrait
+      const inDeadzone = scrolled || !pointer.active || dist < radius * DEADZONE;
       const target = Math.atan2(dy, dx);
       smoothed = lerpAngle(smoothed, target, LERP);
 
@@ -167,16 +164,9 @@ const CursorHero = () => {
           key = String(idx);
           img = frames[idx];
         }
-        const scrolled = window.scrollY > 8;
-        const cue = section.querySelector<HTMLElement>(".hero-scroll");
-        if (cue) cue.style.opacity = scrolled ? "0" : "1";
-        const target = og && scrolled ? 1 : 0;
-        ogMix += (target - ogMix) * 0.18;
-        if (Math.abs(target - ogMix) < 0.01) ogMix = target;
-        const fullKey = `${key}|${ogMix.toFixed(2)}`;
-        if (fullKey !== lastDrawn) {
-          drawCover(img, og, ogMix);
-          lastDrawn = fullKey;
+        if (key !== lastDrawn) {
+          drawCover(img);
+          lastDrawn = key;
         }
       } else {
         const strength = inDeadzone ? 0 : Math.min(1, dist / (radius * 0.6));
@@ -205,14 +195,12 @@ const CursorHero = () => {
     const pad = (i: number) => String(i).padStart(2, "0");
     Promise.all([
       loadImage(`${hero.framesPath}/center.webp`),
-      loadImage(`${hero.framesPath}/og.webp`).catch(() => null),
       ...Array.from({ length: n }, (_, i) => loadImage(`${hero.framesPath}/frame_${pad(i)}.webp`)),
     ])
-      .then(([c, o, ...f]) => {
+      .then(([c, ...f]) => {
         if (disposed) return;
-        center = c as HTMLImageElement;
-        og = o as HTMLImageElement | null;
-        frames = f as HTMLImageElement[];
+        center = c;
+        frames = f;
         ready = true;
         lastDrawn = "";
         setHasFrames(true);
