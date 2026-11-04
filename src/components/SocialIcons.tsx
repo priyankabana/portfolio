@@ -1,9 +1,7 @@
 import { FaGithub, FaLinkedinIn } from "react-icons/fa6";
 import { MdOutlineEmail } from "react-icons/md";
 import "./styles/SocialIcons.css";
-import { TbNotes } from "react-icons/tb";
 import { useEffect } from "react";
-import HoverLinks from "./HoverLinks";
 import { config } from "../config";
 
 const SocialIcons = () => {
@@ -72,12 +70,6 @@ const SocialIcons = () => {
           </a>
         </span>
       </div>
-      <a className="resume-button" href={config.hero.resume} target="_blank" rel="noopener noreferrer">
-        <HoverLinks text="RESUME" />
-        <span>
-          <TbNotes />
-        </span>
-      </a>
     </div>
   );
 };
