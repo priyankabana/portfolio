@@ -204,7 +204,7 @@ const CursorHero = () => {
       progressDone = true;
       progress.loaded();
     };
-    const progressCap = window.setTimeout(finishProgress, 1200);
+    const progressCap = window.setTimeout(finishProgress, 900);
 
     const n = hero.frameCount;
     const pad = (i: number) => String(i).padStart(2, "0");

@@ -16,7 +16,7 @@ const Loading = ({ percent }: { percent: number }) => {
       setLoaded(true);
       setTimeout(() => {
         setIsLoaded(true);
-      }, 350);
+      }, 1300); // keep "Welcome" on screen long enough to read
     }, 150);
   }
 
@@ -29,7 +29,7 @@ const Loading = ({ percent }: { percent: number }) => {
             module.initialFX();
           }
           setIsLoading(false);
-        }, 400);
+        }, 700);
       }
     });
   }, [isLoaded]);

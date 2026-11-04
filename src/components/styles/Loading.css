@@ -170,7 +170,7 @@
   max-width: var(--Lsize);
   /* height: 45px; */
   top: 50%;
-  transition: 1s;
+  transition: 0.4s ease-in;
   left: 50px;
   z-index: 9;
   transform: translateY(-50%);
@@ -213,8 +213,8 @@
   }
 }
 .loading-complete .loading-box {
-  animation: blinkDone 0.3s forwards;
-  animation-delay: 1s;
+  animation: blinkDone 0.15s forwards;
+  animation-delay: 0.25s;
   opacity: 1;
 }
 @keyframes blinkDone {
