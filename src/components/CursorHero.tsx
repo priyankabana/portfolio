@@ -21,7 +21,9 @@ import "./styles/CursorHero.css";
 const TAU = Math.PI * 2;
 const LERP = 0.26; // response factor: ~35 ms to catch up at 60 fps
 const DEADZONE = 0.12; // fraction of the screen radius that triggers eye contact
-const FACE = { x: 0.5, y: 0.42 }; // face centre as a fraction of the hero size
+const FACE = { x: 0.5, y: 0.42 }; // face centre as a fraction of the hero size (updated on resize)
+const SUBJECT_X_DESKTOP = 0.76; // on wide screens the portrait sits on the right, above the role line
+const SUBJECT_Y_SHIFT = -0.04; // nudge the portrait up so it clears the role line
 
 const lerpAngle = (a: number, b: number, t: number) => {
   let d = ((b - a + Math.PI) % TAU + TAU) % TAU - Math.PI;
@@ -73,6 +75,8 @@ const CursorHero = () => {
       canvas.style.width = `${w}px`;
       canvas.style.height = `${h}px`;
       ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+      FACE.x = w > 900 ? SUBJECT_X_DESKTOP : 0.5;
+      FACE.y = w > 900 ? 0.42 + SUBJECT_Y_SHIFT : 0.42;
       pointer.x = w * FACE.x;
       pointer.y = h * FACE.y;
       lastDrawn = "";
@@ -86,7 +90,10 @@ const CursorHero = () => {
       ctx.fillStyle = hero.backgroundColor;
       ctx.fillRect(0, 0, w, h);
       ctx.globalAlpha = 1;
-      ctx.drawImage(img, (w - dw) / 2, (h - dh) / 2, dw, dh);
+      // frames have the subject centred; shift so it lands on FACE.x
+      const dx = w * FACE.x - dw / 2;
+      const dy = (h - dh) / 2 + (w > 900 ? h * SUBJECT_Y_SHIFT : 0);
+      ctx.drawImage(img, dx, dy, dw, dh);
     };
 
     // Shown until real frames are added: a soft orb with a monogram that
