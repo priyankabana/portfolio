@@ -42,9 +42,9 @@ export const config = {
             description:
                 "Build and own production data and LLM pipelines over SEC filings and earnings calls for an equity-research platform.",
             responsibilities: [
-                "Built an LLM quality gate that audited 15 reports (547 sections) and caught 28 false claims, running 6,998 checks for $0.047 total",
-                "Launched the Australian market: 62 reports in one batch, 0 failures, 100% QC pass, 60% lower LLM cost",
-                "Shipped a 10-Q peer-benchmark report product in ~2 weeks: 64 reports, 64/65 passing QC, $4.93 total LLM spend",
+                "Built an LLM quality gate that checks every AI-written research report before publishing, catching false claims and placeholder figures at about a cent per report",
+                "Launched the Australian market on the earnings-call report pipeline: 0 failures, 100% QC pass, 60% lower LLM cost, runtime cut from ~90 to ~25 min",
+                "Shipped a 10-Q peer-benchmark report product from spec to production in ~2 weeks, now generating reports continuously",
                 "Raised earnings-calendar match rate from 23% to 96% across 1,207 companies; cut daily missing-filing rejects from 56 to 0"
             ],
             technologies: ["Python", "PostgreSQL", "Neo4j", "Qdrant", "AWS", "LLM APIs"]
@@ -81,7 +81,7 @@ export const config = {
             technologies: "Python, PostgreSQL, LLM APIs, Rule Engine",
             image: "/images/quality-gate.svg",
             description:
-                "A quality gate for AI-written equity research reports: deterministic rules plus a batched LLM classifier route every section to block, review or publish. An audit of 15 reports (547 company sections) caught 28 false claims, and 6,998 checks ran for $0.047 total with 0 failed calls. Threshold tuning halved the human review queue (753 to 357).",
+                "A quality gate for AI-written equity research reports: deterministic rules plus a batched LLM classifier route every section to block, review or publish. It catches false claims, placeholder figures and double-counted companies before anything is published, at about a cent per report with zero failed calls. Threshold tuning halved the human review queue while improving accuracy.",
             link: ""
         },
         {
@@ -91,7 +91,7 @@ export const config = {
             technologies: "Python, Neo4j, Qdrant, AWS S3, LLM APIs",
             image: "/images/earnings-pipeline.svg",
             description:
-                "Launched an AI earnings-call report pipeline for the Australian market: 62 reports in one batch with 0 failures and a 100% QC pass rate. Vector retrieval cut LLM cost per batch by 60%, and process-level sharding cut runtime from ~90 to ~25 minutes.",
+                "Launched the AI earnings-call report pipeline for the Australian market, running in production with 0 failures and a 100% QC pass rate. Vector retrieval cut LLM cost per batch by 60%, and process-level sharding cut runtime from ~90 to ~25 minutes.",
             link: ""
         },
         {
@@ -101,7 +101,7 @@ export const config = {
             technologies: "Python, SQL, PostgreSQL, LLM APIs",
             image: "/images/peer-reports.svg",
             description:
-                "Took a competitive-intelligence report product from spec to production in about two weeks: 64 reports generated with 64/65 passing QC for $4.93 in total model spend, using SQL peer selection, cached per-filing extraction and pre-screening that rejected 44 of 508 companies before any model call.",
+                "Took a competitive-intelligence report product from spec to production in about two weeks. SQL peer selection, cached per-filing extraction and pre-screening before any model call keep model spend to a few cents per report while it generates reports continuously.",
             link: ""
         },
         {
@@ -111,7 +111,7 @@ export const config = {
             technologies: "Python, PostgreSQL, REST APIs, AWS, cron",
             image: "/images/earnings-calendar.svg",
             description:
-                "Raised the earnings-calendar match rate from 23% to 96% across 1,207 companies and cut unmatched companies from 738 to 34 with a three-source fallback. Traced recurring overnight data corruption to an undocumented cloud scraper and removed ~27K stale records per run.",
+                "Raised the earnings-calendar match rate from 23% to 96% across 1,207 companies and cut unmatched companies from 738 to 34 with a three-source fallback. Traced recurring overnight data corruption to an undocumented cloud scraper and stopped thousands of stale records from overwriting good data on every run.",
             link: ""
         },
         {
@@ -131,7 +131,7 @@ export const config = {
             technologies: "Python, AWS EC2, Bash, cron, PostgreSQL, OpenAI Agents SDK",
             image: "/images/ipo-ec2.svg",
             description:
-                "Daily NASDAQ IPO ingestion: cron starts an EC2 instance, runs the loader with idempotent merges and LLM enrichment for new listings only, then stops the instance and emails a run report (~4 min per run; 0 failures in 7 of 8 logged runs). A flock-based lease protocol lets 3 scheduled jobs share one instance safely.",
+                "Daily NASDAQ IPO ingestion: cron starts an EC2 instance, runs the loader with idempotent merges and LLM enrichment for new listings only, then stops the instance and emails a run report, about 4 minutes end to end. A flock-based lease protocol lets 3 scheduled jobs share one instance safely.",
             link: ""
         },
         {
