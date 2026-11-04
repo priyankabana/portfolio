@@ -152,7 +152,7 @@ export const config = {
             image: "/images/geotrade.svg",
             description:
                 "A supply-chain exposure map built from public filings. Consolidated 29,442 raw listings from 6 markets into 23,020 geocoded companies, served by a 25-table PostGIS schema and a FastAPI service measured at 2-4 ms.",
-            link: "https://geotrade-priyanka.vercel.app"
+            link: "https://geotrade-atlas.vercel.app"
         },
         {
             id: 9,
