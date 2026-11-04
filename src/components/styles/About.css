@@ -155,3 +155,38 @@
     color: #f7e9ee;
   }
 }
+
+/* Personal intro */
+.about-me .about-greeting {
+  font-family: "Dancing Script", cursive;
+  font-size: clamp(48px, 5.5vw, 84px);
+  font-weight: 600;
+  line-height: 1.05;
+  letter-spacing: 0;
+  word-spacing: normal;
+  margin: 0 0 6px;
+  color: #fff4f7;
+  text-shadow: 0 0 28px rgba(244, 166, 192, 0.45);
+}
+.about-me .about-tagline {
+  font-size: clamp(18px, 1.6vw, 24px);
+  font-weight: 500;
+  line-height: 1.4;
+  letter-spacing: 0.2px;
+  margin: 0 0 28px;
+  color: var(--accentColor);
+}
+.about-me .about-body p {
+  font-size: clamp(16px, 1.15vw, 18.5px);
+  font-weight: 400;
+  line-height: 1.75;
+  letter-spacing: 0.1px;
+  word-spacing: normal;
+  margin: 0 0 18px;
+  max-width: 720px;
+  color: rgba(255, 228, 236, 0.82);
+}
+.about-me .about-body p.about-close {
+  color: #fff4f7;
+  font-weight: 500;
+}

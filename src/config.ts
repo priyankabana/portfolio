@@ -24,8 +24,15 @@ export const config = {
     },
     about: {
         title: "About Me",
-        description:
-            "I'm a final-year B.Tech Computer Engineering student at Vishwakarma University, Pune (CGPA 7.77). For the past year I've worked as a Software Engineer Intern on financial data and AI: building pipelines over SEC filings and earnings calls, shipping report products end to end, and designing quality gates that catch what LLMs get wrong. I care about owning problems to the root cause and proving results with numbers."
+        greeting: "hii, im priii",
+        tagline: "I exist on the internet and I build cool stuff.",
+        paragraphs: [
+            "I’m a computer engineering student who enjoys building polished, intuitive digital experiences and systems that actually work in the real world. I spend a lot of time building full-stack projects, automations, and data-driven systems, and figuring out how to turn messy ideas or raw inputs into something reliable and usable.",
+            "Beyond just coding features, I’m drawn to how things work behind the scenes. Designing pipelines, working with APIs, handling data at scale, and applying core CS fundamentals to build for speed and stability is what keeps me curious. I enjoy solving problems where there’s no straight answer and the solution needs both logic and creativity.",
+            "When I’m not coding, I’m usually exploring mountains, going on treks, or getting lost in new places. I dance Bharatanatyam, write sometimes whether it’s poetry or random thoughts about life, and I really enjoy observing the world a little too closely.",
+            "I love learning, building, and connecting with people who care about thoughtful tech and meaningful work."
+        ],
+        description: "I’m a computer engineering student who enjoys building polished, intuitive digital experiences and systems that actually work in the real world. I spend a lot of time building full-stack projects, automations, and data-driven systems, and figuring out how to turn messy ideas or raw inputs into something reliable and usable. Beyond just coding features, I’m drawn to how things work behind the scenes. Designing pipelines, working with APIs, handling data at scale, and applying core CS fundamentals to build for speed and stability is what keeps me curious. I enjoy solving problems where there’s no straight answer and the solution needs both logic and creativity. When I’m not coding, I’m usually exploring mountains, going on treks, or getting lost in new places. I dance Bharatanatyam, write sometimes whether it’s poetry or random thoughts about life, and I really enjoy observing the world a little too closely. I love learning, building, and connecting with people who care about thoughtful tech and meaningful work."
     },
     education: {
         degree: "B.Tech, Computer Engineering",

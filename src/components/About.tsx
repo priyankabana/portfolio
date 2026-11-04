@@ -26,7 +26,15 @@ const About = () => {
       </aside>
       <div className="about-me">
         <h3 className="title">{config.about.title}</h3>
-        <p className="para">{config.about.description}</p>
+        <p className="about-greeting">{config.about.greeting}</p>
+        <p className="about-tagline">{config.about.tagline}</p>
+        <div className="about-body">
+          {config.about.paragraphs.map((text, i) => (
+            <p key={i} className={i === config.about.paragraphs.length - 1 ? "about-close" : undefined}>
+              {text}
+            </p>
+          ))}
+        </div>
       </div>
     </div>
   );
