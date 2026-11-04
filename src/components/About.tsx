@@ -14,7 +14,6 @@ const About = () => {
   return (
     <div className="about-section" id="about">
       <aside className="about-facts" aria-label="Quick facts">
-        <p className="about-facts-script">a little about me</p>
         <dl>
           {facts.map((f) => (
             <div className="about-fact" key={f.label}>
@@ -25,7 +24,7 @@ const About = () => {
         </dl>
       </aside>
       <div className="about-me">
-        <h3 className="title">{config.about.title}</h3>
+        <h3 className="title about-heading">a little about me</h3>
         <p className="about-greeting">{config.about.greeting}</p>
         <p className="about-tagline">{config.about.tagline}</p>
         <div className="about-body">

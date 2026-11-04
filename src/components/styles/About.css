@@ -190,3 +190,16 @@
   color: #fff4f7;
   font-weight: 500;
 }
+
+/* Single section heading, in the script style */
+.about-me h3.about-heading {
+  font-family: "Dancing Script", cursive;
+  font-size: clamp(30px, 2.6vw, 40px);
+  font-weight: 600;
+  text-transform: none;
+  letter-spacing: 0;
+  color: var(--accentColor);
+  margin: 0 0 6px;
+}
+
+.about-fact:first-child { border-top: none; padding-top: 4px; }
