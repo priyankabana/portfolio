@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#3b1730"/><stop offset="1" stop-color="#140a10"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.78" cy="0.25" r="0.6">
+      <stop offset="0" stop-color="#ffd3e1" stop-opacity="0.45"/><stop offset="1" stop-color="#ffd3e1" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="800" height="500" fill="url(#bg)"/>
+  <rect width="800" height="500" fill="url(#glow)"/>
+  <g opacity="0.85">
+    <circle cx="590" cy="190" r="104" stroke="#ffd3e1" fill="none" stroke-width="2" stroke-opacity="0.5"/>
+    <circle cx="590" cy="190" r="70" stroke="#ffd3e1" fill="none" stroke-width="1.5" stroke-opacity="0.35"/>
+    <path d="M548 192 l30 30 l58 -66" stroke="#ffd3e1" fill="none" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+    <g fill="#ffd3e1" fill-opacity="0.35"><rect x="60" y="70" width="30" height="110" rx="6"/><rect x="104" y="86" width="30" height="92" rx="6"/><rect x="148" y="102" width="30" height="74" rx="6"/><rect x="192" y="70" width="30" height="56" rx="6"/><rect x="236" y="86" width="30" height="110" rx="6"/><rect x="280" y="102" width="30" height="92" rx="6"/><rect x="324" y="70" width="30" height="74" rx="6"/></g>
+  </g>
+  <text x="56" y="390" font-family="Georgia, 'Times New Roman', serif" font-size="64" font-style="italic" fill="#fff4f7">Touchstone</text>
+  <text x="58" y="432" font-family="Helvetica, Arial, sans-serif" font-size="17" letter-spacing="5" fill="#e7b7a3">DATA RELIABILITY · AI AGENTS</text>
+</svg>

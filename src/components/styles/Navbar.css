@@ -1,0 +1,125 @@
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: var(--cMaxWidth);
+  width: var(--cWidth);
+  padding: 16px 0;
+  margin-bottom: -80px;
+  box-sizing: border-box;
+  position: fixed;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 0;
+  z-index: 9999;
+}
+
+.navbar-title {
+  font-family: "Dancing Script", cursive;
+  font-weight: 700;
+  font-size: 30px;
+  line-height: 1;
+  color: #fff4f7;
+  text-shadow: 0 0 18px rgba(255, 143, 179, 0.45);
+}
+
+.nav-pill {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin: 0;
+  padding: 6px;
+  list-style: none;
+  border-radius: 999px;
+  background: rgba(255, 240, 245, 0.08);
+  border: 1px solid rgba(255, 220, 232, 0.22);
+  box-shadow: 0 10px 40px -12px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(20px) saturate(140%);
+  -webkit-backdrop-filter: blur(20px) saturate(140%);
+}
+
+.nav-pill li a {
+  display: flex;
+  align-items: center;
+  line-height: 1;
+  padding: 8px 16px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  color: #f7e9ee;
+  transition: background 0.3s, color 0.3s;
+}
+
+.nav-pill li a::before {
+  content: "[";
+  opacity: 0.5;
+  margin-right: 2px;
+}
+
+.nav-pill li a::after {
+  content: "]";
+  opacity: 0.5;
+  margin-left: 2px;
+}
+
+.nav-pill li a:hover {
+  background: rgba(244, 166, 192, 0.18);
+  color: #fff;
+}
+
+.nav-pill li a > div,
+.nav-pill li a .hover-link {
+  display: inline-block;
+}
+
+.navbar-connect {
+  display: none;
+  font-size: 13px;
+  letter-spacing: 0.6px;
+  font-weight: 500;
+  color: rgba(247, 233, 238, 0.75);
+}
+
+@media only screen and (min-width: 900px) {
+  .navbar-connect {
+    display: block;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .header {
+    padding: 28px 0;
+  }
+  .nav-pill li a {
+    font-size: 13px;
+    padding: 9px 20px;
+  }
+}
+
+@media only screen and (max-width: 520px) {
+  .nav-pill {
+    position: static;
+    transform: none;
+  }
+  .nav-pill li a {
+    padding: 7px 10px;
+    font-size: 11px;
+    letter-spacing: 1px;
+  }
+}
+
+.nav-fade {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 110px;
+  z-index: 9998;
+  pointer-events: none;
+  background: linear-gradient(180deg, rgba(20, 10, 16, 0.85) 0%, rgba(20, 10, 16, 0) 100%);
+  opacity: 0;
+}

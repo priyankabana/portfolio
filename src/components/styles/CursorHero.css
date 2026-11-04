@@ -1,0 +1,148 @@
+.hero {
+  position: relative;
+  width: 100vw;
+  height: var(--vh);
+  min-height: 560px;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.hero-canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  z-index: 0;
+}
+
+/* Soft plum vignette + rose bloom so the copy always reads, frames or not */
+.hero-vignette {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background:
+    radial-gradient(120% 90% at 0% 100%, rgba(20, 10, 16, 0.78) 0%, rgba(20, 10, 16, 0) 55%),
+    linear-gradient(180deg, rgba(20, 10, 16, 0) 70%, var(--backgroundColor) 100%);
+}
+
+.hero-copy {
+  position: absolute;
+  left: clamp(20px, 9vw, 150px);
+  bottom: clamp(48px, 11vh, 120px);
+  z-index: 2;
+  max-width: 400px;
+}
+
+.hero-greeting {
+  margin: 0 0 4px;
+  font-size: 15px;
+  font-weight: 500;
+  letter-spacing: 6px;
+  text-transform: uppercase;
+  color: var(--roseGold);
+}
+
+.hero-name {
+  margin: 0;
+  font-family: "Dancing Script", cursive !important;
+  font-weight: 700;
+  font-size: clamp(72px, 10vw, 148px);
+  line-height: 0.95;
+  color: #fff4f7;
+  text-shadow: 0 6px 30px rgba(255, 143, 179, 0.35), 0 2px 6px rgba(20, 10, 16, 0.45);
+}
+
+.hero-bio {
+  max-width: 340px;
+  margin: 18px 0 26px;
+  font-size: 15.5px;
+  line-height: 1.6;
+  color: rgba(247, 233, 238, 0.82);
+}
+
+.hero-actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.hero-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 13px 26px;
+  border-radius: 999px;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.4px;
+  transition: transform 0.35s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.35s, background 0.35s, color 0.35s;
+}
+
+.hero-btn-solid {
+  background: #fff7fa;
+  color: #2a1420;
+  box-shadow: 0 10px 30px -10px rgba(255, 143, 179, 0.7);
+}
+
+.hero-btn-solid:hover {
+  color: #2a1420;
+  transform: translateY(-2px);
+  box-shadow: 0 16px 36px -10px rgba(255, 143, 179, 0.9);
+}
+
+.hero-btn-glass {
+  color: #fff7fa;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.55);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+}
+
+.hero-btn-glass:hover {
+  color: #fff7fa;
+  background: rgba(255, 255, 255, 0.16);
+  transform: translateY(-2px);
+}
+
+.hero-role {
+  position: absolute;
+  right: clamp(20px, 5vw, 80px);
+  bottom: clamp(48px, 11vh, 120px);
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 6px;
+  font-size: 12px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: rgba(247, 233, 238, 0.6);
+}
+
+.hero-role span:first-child {
+  color: var(--accentColor);
+}
+
+@media only screen and (max-width: 768px) {
+  .hero {
+    min-height: 640px;
+  }
+  .hero-copy {
+    left: 20px;
+    right: 20px;
+    bottom: 48px;
+    max-width: none;
+  }
+  .hero-name {
+    font-size: 76px;
+  }
+  .hero-bio {
+    font-size: 14.5px;
+    margin: 12px 0 20px;
+  }
+  .hero-role {
+    display: none;
+  }
+}
